@@ -48,7 +48,7 @@ build-test-docker-images:
 		docker tag casperlabs/client:${CL_DOCKER_TAG} casperlabs/client:test                     ; \
 		if [ ! -f target/system-contracts.tar.gz ]; then                                           \
 			echo "[x] Downloading 'system-contracts.tar.gz'."                                    ; \
-			curl http://repo.casperlabs.io/casperlabs/repo/${CL_GIT_TAG}/system-contracts.tar.gz   \
+			curl -L http://repo.casperlabs.io/casperlabs/repo/${CL_GIT_TAG}/system-contracts.tar.gz   \
 				-o target/system-contracts.tar.gz                                                ; \
 		fi                                                                                       ; \
 		mkdir -p ${CL_REPO_DIR}/hack/docker/.genesis/system-contracts                            ; \
